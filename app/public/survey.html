@@ -26,6 +26,10 @@
                 color:#dff9fb;
             }
 
+            .btn:hover,.btn:active,.btn:focus{
+                background-color: #4a8630;
+            }
+
             .fa{
                 color:#6ab04c;
             }
@@ -182,7 +186,7 @@
         </footer>
 
         <!-- Modal-->
-        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalAlert" aria-hidden="true">
+        <div class="modal fade" id="alertError" tabindex="-1" role="dialog" aria-labelledby="modalAlert" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -205,7 +209,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    <script type="text/javascript">
+        $(document).on("click", ".btn", function(event) {
+            event.preventDefault();
 
+            if($("#name").val() !== "" && $("#photo").val() !== "") {
+                var newUser = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),
+                        $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()
+                    ],
+                };
+
+                //Reset Values
+                $("select").val("3");
+                $("#name","#photo").val("");
+
+                console.log(newUser);
+                
+                /*$.post(window.location.origin + "/api/friends", newUser).then(function(data) {
+                    console.log(data);
+                });*/
+            } else {
+                $('#alertError').modal('show');
+            }
+        });
+    </script>
 
 </body>
 </html>
