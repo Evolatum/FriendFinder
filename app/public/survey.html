@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FriendBook - Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+    <style>
+            body{
+                background-color: #dff9fb;
+                color: #130f40;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            .jumbotron{
+                background-color: #c7ecee;
+            }
+
+            .btn{
+                background-color: #6ab04c;
+                color:#dff9fb;
+            }
+
+            .fa{
+                color:#6ab04c;
+            }
+
+            a{
+                color:#130f40;
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1><i class="fa fa-book"></i> FriendBook</h1>
+            <br>
+            <h3>Answer as truthfully as you can!</h3>
+            <br>
+            <hr>
+            <br>
+
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Nur Booker">
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">Photo:</label>
+                    <input type="text" class="form-control" id="photo" placeholder="photos.com/myBestOne">
+                </div>
+
+                <div class="form-group">
+                    <label for="q1">1. Do you like Fiction books?</label><br>
+                    <select class="form-control" id="q1">
+                        <option value="1">&#x1F621; Hate them!</option>
+                        <option value="2">&#x1F620; Dislike them</option>
+                        <option value="3" selected="selected">&#x1F610; Meh</option>
+                        <option value="4">&#x1F600; Like them</option>
+                        <option value="5">&#x1F60D; Love them!</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q2">2. Do you enjoy Mystery novels?</label><br>
+                    <select class="form-control" id="q2">
+                        <option value="1">&#x1F621; Hate them!</option>
+                        <option value="2">&#x1F620; Dislike them</option>
+                        <option value="3" selected="selected">&#x1F610; Meh</option>
+                        <option value="4">&#x1F600; Like them</option>
+                        <option value="5">&#x1F60D; Love them!</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q3">3. Do you get lost in Romance novels?</label><br>
+                    <select class="form-control" id="q3">
+                        <option value="1">&#x1F621; Hate them!</option>
+                        <option value="2">&#x1F620; Dislike them</option>
+                        <option value="3" selected="selected">&#x1F610; Meh</option>
+                        <option value="4">&#x1F600; Like them</option>
+                        <option value="5">&#x1F60D; Love them!</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q4">4. Can you handle Long Sagas?</label><br>
+                    <select class="form-control" id="q4">
+                        <option value="1">&#x1F621; Hate them!</option>
+                        <option value="2">&#x1F620; Dislike them</option>
+                        <option value="3" selected="selected">&#x1F610; Meh</option>
+                        <option value="4">&#x1F600; Like them</option>
+                        <option value="5">&#x1F60D; Love them!</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q5">5. Do you find Fantasy books enjoyable?</label><br>
+                    <select class="form-control" id="q5">
+                        <option value="1">&#x1F621; Hate them!</option>
+                        <option value="2">&#x1F620; Dislike them</option>
+                        <option value="3" selected="selected">&#x1F610; Meh</option>
+                        <option value="4">&#x1F600; Like them</option>
+                        <option value="5">&#x1F60D; Love them!</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q6">6. Do you like Illustrated books?</label><br>
+                    <select class="form-control" id="q6">
+                        <option value="1">&#x1F621; Hate them!</option>
+                        <option value="2">&#x1F620; Dislike them</option>
+                        <option value="3" selected="selected">&#x1F610; Meh</option>
+                        <option value="4">&#x1F600; Like them</option>
+                        <option value="5">&#x1F60D; Love them!</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q7">7. Are Classics for you?</label><br>
+                    <select class="form-control" id="q7">
+                        <option value="1">&#x1F621; Hate them!</option>
+                        <option value="2">&#x1F620; Dislike them</option>
+                        <option value="3" selected="selected">&#x1F610; Meh</option>
+                        <option value="4">&#x1F600; Like them</option>
+                        <option value="5">&#x1F60D; Love them!</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q8">8. Can you handle Scary books?</label><br>
+                    <select class="form-control" id="q8">
+                        <option value="1">&#x1F621; Hate them!</option>
+                        <option value="2">&#x1F620; Dislike them</option>
+                        <option value="3" selected="selected">&#x1F610; Meh</option>
+                        <option value="4">&#x1F600; Like them</option>
+                        <option value="5">&#x1F60D; Love them!</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q9">9. Do you like Futuristic books?</label><br>
+                    <select class="form-control" id="q9">
+                        <option value="1">&#x1F621; Hate them!</option>
+                        <option value="2">&#x1F620; Dislike them</option>
+                        <option value="3" selected="selected">&#x1F610; Meh</option>
+                        <option value="4">&#x1F600; Like them</option>
+                        <option value="5">&#x1F60D; Love them!</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="q10">10. Are Short Stories something you read?</label><br>
+                    <select class="form-control" id="q10">
+                        <option value="1">&#x1F621; Hate them!</option>
+                        <option value="2">&#x1F620; Dislike them</option>
+                        <option value="3" selected="selected">&#x1F610; Meh</option>
+                        <option value="4">&#x1F600; Like them</option>
+                        <option value="5">&#x1F60D; Love them!</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+
+        </div>
+
+        <footer>
+            <div class="text-right">
+                <a href="/api/friends">API</a> | 
+                <a href="https://github.com/Evolatum/FriendFinder"><i class="fa fa-github"></i> Github</a>
+            </div>
+        </footer>
+
+        <!-- Modal-->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalAlert" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Missing Info!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        Don't forget to add your name and photo and the top!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+                </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
