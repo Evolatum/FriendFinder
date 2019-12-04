@@ -200,7 +200,7 @@
                         <button type="button" class="btn"data-dismiss="modal">Ok</button>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
 
     </div>
@@ -229,9 +229,9 @@
 
                 console.log(newUser);
                 
-                /*$.post(window.location.origin + "/api/friends", newUser).then(function(data) {
+                $.post("/api/friends", newUser, function(data) {
                     console.log(data);
-                });*/
+                });
             } else {
                 $('#alertError').modal('show');
             }
