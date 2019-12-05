@@ -247,8 +247,8 @@
                 $("#photo").val("");
                 
                 $.post("/api/friends", newUser, function(data) {
-                    $("#alertMatchBody").html(`<img src="${data.photo}" alt="matchPhoto" height="100" width="100">`+
-                                  `Your new friend is ${data.name}!<br> Your have a book-match of ${100-(data.score*100/40)}%!`);
+                    $("#alertMatchBody").html(`<div class="row"><div class="col-4"><img src="${data.photo}" alt="matchPhoto" height="100" width="100"></div>`+
+                                  `<div class="col-8">Your new friend is ${data.name}!<br> You have a book-match of ${100-(data.score*100/40)}%!</div></div>`);
                     $("#alertMatch").modal('show');
                 });
             } else {
