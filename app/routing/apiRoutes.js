@@ -24,5 +24,6 @@ module.exports = function(app) {
         }
         console.log(`Best match was: ${friendsData[bestMatch[1]].name} with a match score of ${bestMatch[0]}.`);
         friendsData.push(req.body);
+        res.send({name:friendsData[bestMatch[1]].name,score:bestMatch[0],photo:friendsData[bestMatch[1]].photo});
     });
 }

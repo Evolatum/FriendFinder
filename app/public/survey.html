@@ -185,7 +185,7 @@
             </div>
         </footer>
 
-        <!-- Modal-->
+        <!-- Modal for Error in Survey-->
         <div class="modal fade" id="alertError" tabindex="-1" role="dialog" aria-labelledby="modalAlert" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -195,6 +195,24 @@
                     </div>
                     <div class="modal-body">
                         Don't forget to add your name and photo and the top!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn"data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Best Friend Match -->
+        <div class="modal fade" id="alertMatch" tabindex="-1" role="dialog" aria-labelledby="modalAlert" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">FriendBook Match!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="alertMatchBody"></span>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn"data-dismiss="modal">Ok</button>
@@ -225,12 +243,13 @@
 
                 //Reset Values
                 $("select").val("3");
-                $("#name","#photo").val("");
-
-                console.log(newUser);
+                $("#name").val("");
+                $("#photo").val("");
                 
                 $.post("/api/friends", newUser, function(data) {
-                    console.log(data);
+                    $("#alertMatchBody").html(`<img src="${data.photo}" alt="matchPhoto" height="100" width="100">`+
+                                  `Your new friend is ${data.name}!<br> Your have a book-match of ${100-(data.score*100/40)}%!`);
+                    $("#alertMatch").modal('show');
                 });
             } else {
                 $('#alertError').modal('show');
